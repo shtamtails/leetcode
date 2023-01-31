@@ -39,8 +39,6 @@ function isSubsequence(s: string, t: string): boolean {
   return sPointer === s.length;
 }
 
-console.log(isSubsequence("def", "abcdefg"));
-
 /*
 
 abcdefg
