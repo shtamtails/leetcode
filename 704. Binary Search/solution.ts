@@ -27,17 +27,19 @@ nums is sorted in ascending order.
 
 */
 
-function search(nums: number[], target: number): number {
-  let left = 0;
-  let right = nums.length - 1;
+const array: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-  while (left < right) {
-    let mid = left + Math.floor((right - left + 1) / 2);
-    if (nums[mid] > target) {
-      right = mid - 1;
+function search(nums: number[], target: number): number {
+  let start = 0;
+  let end = nums.length;
+  while (start <= end) {
+    let middle = Math.floor((start + end) / 2);
+    if (nums[middle] === target) return middle;
+    if (target < nums[middle]) {
+      end = middle - 1;
     } else {
-      left = mid;
+      start = middle + 1;
     }
   }
-  return nums[left] === target ? left : -1;
+  return -1;
 }
